@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatOptionModule,    
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule
   ],
   exports: [
     CommonModule,
@@ -34,7 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatOptionModule,    
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class SharedModule { }

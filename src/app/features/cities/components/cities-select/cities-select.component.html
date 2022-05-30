@@ -1,16 +1,17 @@
-<form>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>City</mat-label>
-    <input type="text"
-           placeholder="Pick one"
-           aria-label="Number"
-           matInput
-           [formControl]="citiesSelectControl"
-           [matAutocomplete]="auto">
-           <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let city of cities" [value]="city.name">
-              {{ city.name }}
-            </mat-option>
-          </mat-autocomplete>
-  </mat-form-field>
-</form>
+<div class="cities-select-container">
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>City</mat-label>
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="Number"
+        matInput
+        [formControl]="citySelectControl"
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="getCityWeather()">Get Weather</button>
+  
+  </form>
+</div>
+
