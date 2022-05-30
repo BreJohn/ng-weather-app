@@ -1,10 +1,10 @@
 import { Action } from '@ngrx/store';
-import { City } from 'src/app/features/cities/model/city';
+import { CityApiResponse } from 'src/app/features/cities/model/CityApiResponse';
 
 import * as CityWeatherActions from '../actions/city-weather.actions';
 
 const initialState: {
-    favoriteCities: City[]
+    favoriteCities: CityApiResponse[]
 } = {
   favoriteCities: [],
 };

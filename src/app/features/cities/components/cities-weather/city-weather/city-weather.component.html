@@ -1,17 +1,13 @@
 <mat-card class="city-weather-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{weather.main}}</mat-card-title>
-      <mat-card-subtitle>{{weather.id}}</mat-card-subtitle>
+      <mat-card-title>{{cityWeather.name}} <span class="temp-symbol">{{cityWeather.temperature}}</span></mat-card-title>
+      <mat-card-subtitle>{{cityWeather.weather.description}}</mat-card-subtitle>
+      <button mat-button class="favorite-icon"><mat-icon color="warn">favorite</mat-icon></button>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
+    <img mat-card-image src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon">
+    <!-- <mat-card-content>
       <p>
-        {{weather.description}}
+        {{cityWeather.weather.description}}
       </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
+    </mat-card-content> -->
   </mat-card>

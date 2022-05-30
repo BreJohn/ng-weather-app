@@ -1,4 +1,4 @@
-export interface City {
+export interface CityApiResponse {
     country: string;
     lat: number;
     local_names: any;

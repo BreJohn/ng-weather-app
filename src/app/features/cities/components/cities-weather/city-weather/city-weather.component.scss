@@ -1,3 +1,18 @@
 .city-weather-card {
-    width: 250px;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  .favorite-icon {
+    position: absolute;
+    top: 1em;
+    right: 0px;
+  }
+  .temp-symbol::after {
+    margin-left: 0.2em;
+    content: '\2103';
+  }
+  .mat-card-image {
+    align-self: center;
+    width: 100px;
+  }
 }

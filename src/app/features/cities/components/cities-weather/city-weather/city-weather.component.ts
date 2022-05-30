@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CityWeather, Weather } from '../../../model/cityWeather';
+import { CityWeather } from '../../../model/CityWeather';
 
 @Component({
   selector: 'app-city-weather',
@@ -7,7 +7,7 @@ import { CityWeather, Weather } from '../../../model/cityWeather';
   styleUrls: ['./city-weather.component.scss']
 })
 export class CityWeatherComponent implements OnInit {
-  @Input() weather!: Weather;
+  @Input() cityWeather!: CityWeather;
   
   constructor() { }
 

@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [],
@@ -25,7 +26,8 @@ import {MatCardModule} from '@angular/material/card';
     MatAutocompleteModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   exports: [
     CommonModule,
@@ -40,7 +42,8 @@ import {MatCardModule} from '@angular/material/card';
     MatAutocompleteModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }
