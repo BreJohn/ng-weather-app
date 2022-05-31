@@ -2,12 +2,10 @@
     <mat-card-header>
       <mat-card-title>{{cityWeather.name}} <span class="temp-symbol">{{cityWeather.temperature}}</span></mat-card-title>
       <mat-card-subtitle>{{cityWeather.weather.description}}</mat-card-subtitle>
-      <button mat-button class="favorite-icon"><mat-icon color="warn">favorite</mat-icon></button>
+      <button mat-button class="favorite-icon">
+        <mat-icon (click)="toggleFavoriteCity(cityWeather.searchedName)" color="warn">{{cityWeather.favorite? 'favorite' : 'favorite_outlined' }}</mat-icon>
+      </button>
     </mat-card-header>
-    <img mat-card-image src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon">
-    <!-- <mat-card-content>
-      <p>
-        {{cityWeather.weather.description}}
-      </p>
-    </mat-card-content> -->
+    <img mat-card-image [src]="'http://openweathermap.org/img/wn/' + cityWeather.weather.icon +'@2x.png'" alt="Weather Icon">
+
   </mat-card>

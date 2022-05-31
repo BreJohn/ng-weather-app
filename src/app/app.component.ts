@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
+import { CitiesService } from './core/services/cities.service';
 import { CityWeather } from './features/cities/model/CityWeather';
-import {
-  CityWeatherApiResponse,
-  Weather,
-} from './features/cities/model/CityWeatherApiResponse';
+import { getLocalStorageCityNames } from './shared/utils/localStorageUtils';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +9,10 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ng-weather-app';
-  citiesWeather: CityWeather[] = [];
+  public title = 'ng-weather-app';
+  public cityName = '';
 
-  getCityWeather(cityWeather: CityWeather) {
-    this.citiesWeather = [...this.citiesWeather, cityWeather];
+  getCityWeather(cityName: string) {
+    this.cityName = cityName;
   }
 }

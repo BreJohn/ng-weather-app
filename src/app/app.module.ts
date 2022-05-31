@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { CitiesModule } from './features/cities/cities.module';
 import { SharedModule } from './shared/shared/shared.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { cityWeatherReducer } from './core/store/reducers/city-weather.reducer';
-import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -20,7 +18,6 @@ import { StoreModule } from '@ngrx/store';
     CitiesModule,
     NoopAnimationsModule,
     SharedModule,
-    StoreModule.forRoot(cityWeatherReducer),
 
   ],
   providers: [],

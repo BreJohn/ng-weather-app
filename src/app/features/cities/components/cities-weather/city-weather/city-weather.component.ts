@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CitiesService } from 'src/app/core/services/cities.service';
 import { CityWeather } from '../../../model/CityWeather';
 
 @Component({
@@ -6,12 +7,13 @@ import { CityWeather } from '../../../model/CityWeather';
   templateUrl: './city-weather.component.html',
   styleUrls: ['./city-weather.component.scss']
 })
-export class CityWeatherComponent implements OnInit {
+export class CityWeatherComponent {
   @Input() cityWeather!: CityWeather;
   
-  constructor() { }
+  constructor(private _citiesService: CitiesService) { }
 
-  ngOnInit(): void {
+  public toggleFavoriteCity(name: string) {
+    this._citiesService.toggleFavoriteCity(name, !this.cityWeather.favorite);
   }
 
 }

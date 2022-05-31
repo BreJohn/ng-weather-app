@@ -2,10 +2,17 @@
   display: flex;
   flex-direction: column;
   min-width: 250px;
+
+  mat-card-title {
+    margin-right: 30px;
+  }
   .favorite-icon {
     position: absolute;
     top: 1em;
     right: 0px;
+  }
+  .temp-symbol {
+    margin-left: 15px;
   }
   .temp-symbol::after {
     margin-left: 0.2em;

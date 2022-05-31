@@ -1,8 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { CitiesService } from 'src/app/core/services/cities.service';
-import { cities } from 'src/app/shared/data/cities';
-import { CityWeather } from '../../model/CityWeather';
+import { FormControl, Validators } from '@angular/forms';
 import { CityWeatherApiResponse } from '../../model/CityWeatherApiResponse';
 
 @Component({
@@ -11,27 +8,16 @@ import { CityWeatherApiResponse } from '../../model/CityWeatherApiResponse';
   styleUrls: ['./cities-select.component.scss'],
 })
 export class CitiesSelectComponent implements OnInit {
-  @Output() onGetCityWeather = new EventEmitter<CityWeather>();
+  @Output() onGetCityWeather = new EventEmitter<string>();
 
-  cities = [...cities];
-  citySelectControl = new FormControl();
-  cityWeather!: CityWeatherApiResponse;
-
-  constructor(private _citiesService: CitiesService) {}
+  public citySelectControl = new FormControl('', Validators.required);
+  public cityWeather!: CityWeatherApiResponse;
 
   ngOnInit(): void {}
 
   public getCityWeather(): void {
     const controlValue = this.citySelectControl.value;
     if (!controlValue) return;
-    this._citiesService
-      .getCityWeather(this.citySelectControl.value)
-      .subscribe((res) =>
-        this.onGetCityWeather.emit({
-          name: this.citySelectControl.value,
-          weather: res?.weather[0],
-          temperature: res.main.temp
-        })
-      );
+     this.onGetCityWeather.emit(controlValue);
   }
 }
